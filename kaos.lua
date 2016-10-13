@@ -2808,7 +2808,15 @@ function get_kaos(str)
     end
 end
 
+function get_yanw(str)
+    local t = dict[str]
+    if not t then return str end
+	return t
+end
+
 math.randomseed(os.time())
 ime.register_trigger("get_kaos", "kaos", trigger_0, {})
 ime.register_trigger("get_kaos", "kaos", trigger_1, {})
 ime.register_trigger("get_kaos", "kaos", trigger_2, {})
+
+ime.register_command("yw", "get_yanw", "输入颜文字拼音", "digit", "输入颜文字拼音，例如jiayou")
